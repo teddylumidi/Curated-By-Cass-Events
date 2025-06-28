@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curated by Cass Events - Where Taste Meets Celebration</title>
+    
+    <!-- Performance: Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Custom styles to enhance the design */
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8F9FA;
+        }
+        .font-playfair {
+            font-family: 'Playfair Display', serif;
+        }
+        /* Hero section background image */
+        .hero-section {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('food.png');
+            background-size: cover;
+            background-position: center;
+        }
+        .gold-text {
+            color: #D4AF37;
+        }
+        .dark-green-bg {
+             background-color: #0c2c1a;
+        }
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        /* Styles for the floating WhatsApp button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25D366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 6px #999;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header Section -->
+    <header class="dark-green-bg text-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#" class="flex items-center">
+                <img src="logo.png" alt="Curated by Cass Events Logo" class="h-16" onerror="this.onerror=null;this.src='https://placehold.co/64x64/0c2c1a/d4af37?text=C';">
+            </a>
+            <div class="hidden md:flex space-x-6 font-bold">
+                <a href="#" class="hover:text-gold-text transition duration-300">Home</a>
+                <a href="#about" class="hover:text-gold-text transition duration-300">About</a>
+                <a href="#services" class="hover:text-gold-text transition duration-300">Services</a>
+                <a href="#gallery" class="hover:text-gold-text transition duration-300">Gallery</a>
+                <a href="#contact" class="hover:text-gold-text transition duration-300">Contact</a>
+            </div>
+             <div class="md:hidden">
+                <button id="menu-btn" class="text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden px-6 pb-4 font-bold">
+            <a href="#" class="block py-2 text-center hover:bg-gray-700 rounded transition duration-300">Home</a>
+            <a href="#about" class="block py-2 text-center hover:bg-gray-700 rounded transition duration-300">About</a>
+            <a href="#services" class="block py-2 text-center hover:bg-gray-700 rounded transition duration-300">Services</a>
+            <a href="#gallery" class="block py-2 text-center hover:bg-gray-700 rounded transition duration-300">Gallery</a>
+            <a href="#contact" class="block py-2 text-center hover:bg-gray-700 rounded transition duration-300">Contact</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-white h-[60vh] flex items-center justify-center">
+        <div class="text-center px-4">
+            <h1 class="text-4xl md:text-6xl font-bold font-playfair mb-4 leading-tight">Curated by Cass Events</h1>
+            <p class="text-xl md:text-2xl font-light">Where Taste Meets Celebration</p>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold font-playfair mb-6 text-gray-800">Bringing Your Vision to Life</h2>
+            <p class="max-w-3xl mx-auto text-lg text-gray-600 leading-relaxed">
+                Specializing in personalized catering and event experiences for small groups of up to 20 guests. Whether you need help curating and preparing a menu for those busy days, or planning a brunch, birthday, or family dinner, we’ll bring your vision to life with flavor and flair!
+            </p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold font-playfair text-center mb-12 text-gray-800">Our Services</h2>
+            <div class="grid md:grid-cols-3 gap-10">
+                <!-- Service Card 1 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover text-center">
+                    <img src="meal-prep.png" alt="Meal Planning and Prep" class="w-full h-48 object-cover" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://placehold.co/600x400/a3b18a/FFFFFF?text=Meal+Prep';">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Meal Planning & Prep</h3>
+                        <p class="text-gray-600">Perfectly planned and prepared meals to simplify your busy life.</p>
+                    </div>
+                </div>
+                <!-- Service Card 2 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover text-center">
+                    <img src="buffet.png" alt="Bulk Cooking and Food Delivery" class="w-full h-48 object-cover" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://placehold.co/600x400/344e41/FFFFFF?text=Food+Delivery';">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Bulk Cooking & Food Delivery</h3>
+                        <p class="text-gray-600">Delicious, home-cooked meals delivered right to your doorstep.</p>
+                    </div>
+                </div>
+                <!-- Service Card 3 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover text-center">
+                    <img src="picnic-setup.png" alt="Event Curation, Planning & Decor" class="w-full h-48 object-cover" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://placehold.co/600x400/d4af37/FFFFFF?text=Event+Decor';">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Event Curation, Planning & Decor</h3>
+                        <p class="text-gray-600">Complete event management to create unforgettable celebrations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold font-playfair text-center mb-12 text-gray-800">A Glimpse of Our Creations</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <div class="grid gap-4">
+                    <div>
+                        <img class="h-auto max-w-full rounded-lg" src="1.png" alt="Catering Creation 1" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://placehold.co/500x750/a3b18a/FFFFFF?text=Creation+1';">
+                    </div>
+                    <div>
+                        <img class="h-auto max-w-full rounded-lg" src="2.png" alt="Catering Creation 2" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://placehold.co/500x350/344e41/FFFFFF?text=Creation+2';">
+                    </div>
+                </div>
+                 <div class="grid gap-4">
+                    <div>
+                        <img class="h-auto max-w-full rounded-lg" src="3.png" alt="Catering Creation 3" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://placehold.co/500x350/d4af37/FFFFFF?text=Creation+3';">
+                    </div>
+                     <div>
+                        <img class="h-auto max-w-full rounded-lg" src="4.png" alt="Catering Creation 4" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://placehold.co/500x750/344e41/FFFFFF?text=Creation+4';">
+                    </div>
+                </div>
+                <div class="grid gap-4">
+                    <div>
+                        <img class="h-auto max-w-full rounded-lg" src="5.png" alt="Catering Creation 5" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://placehold.co/500x750/a3b18a/FFFFFF?text=Creation+5';">
+                    </div>
+                    <div>
+                        <img class="h-auto max-w-full rounded-lg" src="6.png" alt="Catering Creation 6" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://placehold.co/500x350/d4af37/FFFFFF?text=Creation+6';">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 dark-green-bg text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold font-playfair mb-8">Get In Touch</h2>
+            <p class="max-w-2xl mx-auto text-lg mb-10">Ready to plan your next event or meal? Contact us today!</p>
+            <div class="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-10">
+                <a href="https://wa.me/254722525297" target="_blank" class="flex items-center space-x-3 hover:text-gold-text transition duration-300">
+                    <i class="fab fa-whatsapp text-2xl"></i>
+                    <span class="text-lg">+254722525297</span>
+                </a>
+                <a href="mailto:cassandragulo@gmail.com" class="flex items-center space-x-3 hover:text-gold-text transition duration-300">
+                    <i class="fas fa-envelope text-2xl"></i>
+                    <span class="text-lg">cassandragulo@gmail.com</span>
+                </a>
+                <a href="https://www.tiktok.com/@curatedbycassevents" target="_blank" class="flex items-center space-x-3 hover:text-gold-text transition duration-300">
+                    <i class="fab fa-tiktok text-2xl"></i>
+                    <span class="text-lg">@curatedbycassevents</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+             <div class="mb-4 flex justify-center space-x-6 font-bold">
+                <a href="#" class="hover:text-gold-text transition duration-300">Home</a>
+                <a href="#about" class="hover:text-gold-text transition duration-300">About</a>
+                <a href="#services" class="hover:text-gold-text transition duration-300">Services</a>
+                <a href="#gallery" class="hover:text-gold-text transition duration-300">Gallery</a>
+                <a href="#contact" class="hover:text-gold-text transition duration-300">Contact</a>
+            </div>
+            <p>&copy; 2025 Curated by Cass Events. All Rights Reserved. Made by <a href="https://www.shivakalabs.com" target="_blank" rel="noopener noreferrer" class="underline hover:text-gold-text transition duration-300">Shivakalabs</a>.</p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Chat Button -->
+    <a href="https://wa.me/254722525297" target="_blank" class="whatsapp-float" title="Chat with us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+</html>
